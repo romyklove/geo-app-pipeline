@@ -1,6 +1,8 @@
 
 pipeline {
-
+ triggers {
+        pollSCM('* * * * *')
+    }
     agent any
 
     tools {
@@ -61,6 +63,7 @@ stage('maven test') {
             steps {
 
                 sh 'mvn package'
+                sh 'mvn sonar:sonar'
 
             }
 
