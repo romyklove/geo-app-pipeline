@@ -46,7 +46,7 @@ pipeline {
             }
 
         }
-tage('maven test') {
+stage('maven test') {
 
             steps {
 
