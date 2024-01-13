@@ -28,13 +28,13 @@ pipeline {
                 jf 'c show'
                 // Ping Artifactory.
                 jf 'rt ping'
-                // Create a file and upload it to a repository named 'my-test-repo' in Artifactory
-                sh 'touch test-file'
-                jf 'rt u test-file my-test-repo/'
+                // Create a file and upload it to a repository named 'geoapp' in Artifactory
+                sh 'touch geo-app'
+                jf 'rt u geo-app geoapp/'
                 // Publish the build-info to Artifactory.
                 jf 'rt bp'
                 // Download the test-file
-                jf 'rt dl my-test-repo/test-file'
+                jf 'rt dl geoapp/geo-app'
             }
         }
 
